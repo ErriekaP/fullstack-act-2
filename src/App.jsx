@@ -1,15 +1,27 @@
-
+//import { useState } from 'react'
 import './App.css'
+import Post from './components/Post'
 
 function App() {
 
-
   return (
-    <>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    </>
+  
+    <div className='w-screen h-screen flex flex-col justify-center items-center'>
+      <Post></Post>
+      <div className='flex items-center gap-3 mt-3'>
+      {Array.from({length: 5 }).map((value, index) => {
+        return(
+          // eslint-disable-next-line react/jsx-key
+          <div className='p-2 border font-bold hover:cursor-pointer bg-red-950 text-white'>
+            {index + 1}
+          </div> 
+        )
+      })}
+      </div>
+    </div>
+  
+
+   
   )
 }
 
